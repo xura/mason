@@ -26,7 +26,7 @@
     "@types/uuid": "^3.4.4",
     "chalk": "^2.4.1",
     "faker": "^4.1.0",
-    "mongoose": "^5.2.14",
+    "mongoose": "^5.7.5",
     "reflect-metadata": "^0.1.12",
     "tsconfig-paths": "^3.7.0",
     "typegoose": "^5.2.1",
