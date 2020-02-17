@@ -14,6 +14,6 @@ const effects = [
 ];
 
 export default createServer({
-  port: 3078,
+  port: 3000,
   listener: httpListener({ middlewares, effects })
 });

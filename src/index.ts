@@ -3,7 +3,7 @@ import server from '@app';
 
 const bootstrap = async () => {
   await Database.connect();
-  await server;
+  await (await server)();
 };
 
 bootstrap();
