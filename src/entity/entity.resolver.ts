@@ -12,8 +12,8 @@ export class EntityResolver {
     return this.entityService.findAll();
   }
 
-  @Query()
-  async findByName(@Args("name") name: string): Promise<Entity[]> {
+  @Query(() => [Entity])
+  async entitiesByName(@Args("name") name: string): Promise<Entity[]> {
     return this.entityService.findByName(name);
   }
 

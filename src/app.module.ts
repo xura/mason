@@ -12,7 +12,7 @@ import { TypegooseModule } from 'nestjs-typegoose';
       "mongodb://localhost:27017/mason"
     ),
     GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql',
+      autoSchemaFile: 'schema.gql'
     }),
     EntityModule,
   ],

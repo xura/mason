@@ -18,5 +18,5 @@ type Mutation {
 
 type Query {
   entities: [Entity!]!
-  findByName(name: String!): [Entity!]!
+  entitiesByName(name: String!): [Entity!]!
 }
