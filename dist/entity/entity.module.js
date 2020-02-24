@@ -7,25 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const graphql_1 = require("@nestjs/graphql");
-const entity_module_1 = require("./entity/entity.module");
+const entity_service_1 = require("./entity.service");
+const entity_resolver_1 = require("./entity.resolver");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
-let AppModule = class AppModule {
+const entity_model_1 = require("./entity.model");
+let EntityModule = class EntityModule {
 };
-AppModule = __decorate([
+EntityModule = __decorate([
     common_1.Module({
         imports: [
-            nestjs_typegoose_1.TypegooseModule.forRoot("mongodb://localhost:27017/mason"),
-            graphql_1.GraphQLModule.forRoot({
-                autoSchemaFile: 'schema.gql',
-            }),
-            entity_module_1.EntityModule,
+            nestjs_typegoose_1.TypegooseModule.forFeature([entity_model_1.Entity])
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [entity_service_1.EntityService, entity_resolver_1.EntityResolver]
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], EntityModule);
+exports.EntityModule = EntityModule;
+//# sourceMappingURL=entity.module.js.map
