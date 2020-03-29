@@ -19,7 +19,7 @@ export class EntityService {
         return await this.entityModel.find().exec();
     }
 
-    async findByName(name: string): Promise<Entity[] | null> {
-        return await this.entityModel.find({ name }).exec();
+    async findByType(type: number): Promise<Entity[] | null> {
+        return await this.entityModel.find({ Type: type }).exec();
     }
 }

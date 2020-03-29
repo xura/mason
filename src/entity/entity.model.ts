@@ -1,3 +1,4 @@
+import GraphQLJSON from 'graphql-type-json'
 import { ObjectType, Field, ID } from "type-graphql";
 import { prop as Property, Typegoose } from "@typegoose/typegoose";
 import { ObjectId } from "mongodb";
@@ -9,7 +10,19 @@ export class Entity extends Typegoose {
 
     @Field()
     @Property()
-    name?: string;
+    Type: number;
+
+    @Field(() => GraphQLJSON)
+    @Property()
+    Fields: GraphQLJSON;
+
+    @Field()
+    @Property()
+    DateCreated: Date;
+
+    @Field()
+    @Property()
+    DateUpdated: Date;
 }
 
 export const EntityModel = new Entity().getModelForClass(Entity);

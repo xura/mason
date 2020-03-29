@@ -3,7 +3,7 @@ import { Entity } from './entity.model';
 import { EntityService } from './entity.service';
 import { EntityInput } from './entity.input';
 
-@Resolver(of => Entity)
+@Resolver(() => Entity)
 export class EntityResolver {
   constructor(private readonly entityService: EntityService) { }
 
@@ -13,8 +13,8 @@ export class EntityResolver {
   }
 
   @Query(() => [Entity])
-  async entitiesByName(@Args("name") name: string): Promise<Entity[]> {
-    return this.entityService.findByName(name);
+  async entitiesByType(@Args("Type") type: number): Promise<Entity[]> {
+    return this.entityService.findByType(type);
   }
 
   @Mutation(() => Entity)
